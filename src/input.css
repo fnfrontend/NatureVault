@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+
+/* Clouds */
+.clouds .cloud1{position:absolute; bottom:28px; width:25vw; animation: cloudmove 130s infinite; animation-timing-function: linear;}
+.clouds .cloud2{position:absolute; bottom:0; width:20vw; animation: cloudmove1 118s infinite; animation-timing-function: linear;}
+
+/* Cloud Animation */
+@keyframes cloudmove {
+    0% {left: 0;}
+    100% {left: 100%;}
+}
+
+@keyframes cloudmove1 {
+    0% {left: -5%;}
+    100% {left: 110%;}
+}
+
+
+.timeline:before {
+    @apply absolute top-0 block h-full left-2.5 lg:left-[50%];
+    content:'';
+    width:3px;
+    transform: translateX(-50%);
+    background: transparent linear-gradient(180deg, var(--unnamed-color-7afb61) 0%, var(--unnamed-color-00fcff) 43%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
+    background: transparent linear-gradient(180deg, #7AFB61 0%, #00FCFF 43%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;
+}
+
+.timeline .item {
+    @apply relative;
+}
+
+.timeline .item:before {
+    @apply w-5 h-5 block rounded-full absolute top-0 left-0 lg:left-[50%] lg:-ml-2.5;
+    content:'';
+    background: transparent linear-gradient(180deg, #7AFB61 0%, #00FCFF 100%) 0% 0% no-repeat padding-box;
+}
+
+
+.line {
+    @apply relative block mx-auto my-10 md:my-14 h-60 md:h-80 lg:h-[510px] lg:my-[75px];
+    width:3px;
+    background: transparent linear-gradient(180deg, #7AFB61 0%, #00FCFF 43%, #FFFFFF00 100%) 0% 0% no-repeat padding-box;   
+}
+
+.line:before {
+    @apply w-5 h-5 block rounded-full absolute top-0;
+    content:'';
+    left:50%;
+    transform: translateX(-50%);
+    background: transparent linear-gradient(180deg, #7AFB61 0%, #00FCFF 100%) 0% 0% no-repeat padding-box;
+}
+
+
+/* FAQ */
+.faq-list .faq-item {
+    @apply relative;
+}
+
+.faq-list .faq-item .faq-head{
+    @apply text-lg md:text-2xl font-bold py-6 lg:py-7 relative cursor-pointer pr-8;
+}
+
+.faq-list .faq-item .faq-head:after {
+    @apply h-1 w-5 block bg-black absolute right-0 top-[50%];
+    transform:translateY(-50%);
+    content:'';   
+}
+
+.faq-list .faq-item.active .faq-head:before {
+    @apply h-5 w-1 block bg-black absolute right-2 top-[50%];
+    transform:translateY(-50%);
+    content:'';   
+}
+
+.faq-list .faq-item.active .faq-content {
+    @apply block text-lg lg:text-xl pb-6; 
+}
+
+.faq-list .faq-item .faq-content{
+    @apply hidden;
+}
+
+.vision {transition:all ease 1s;}
+
+.vision:not(.in-viewport) {
+    margin-top:250px;
+    opacity:0;
+}
