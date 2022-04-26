@@ -15,8 +15,17 @@
   src="https://code.jquery.com/jquery-3.6.0.min.js"
   integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4="
   crossorigin="anonymous"></script>
+
+  <script src="js/rellax.min.js"></script>
+
+  <link rel="stylesheet" href="css/aos.css" />
+
 </head>
-<body>
+<body class="">
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+   
+  </script>
   <script>
     $(document).ready(function() {  
       $("#hamburger-menu").click(function(){
@@ -32,6 +41,29 @@
         $("#open-meet-the-team").toggle();
         $('#close-meet-the-team').toggle();
       });
+
+      AOS.init();
+      // const scroll = new LocomotiveScroll({
+      //     el: document.querySelector('[data-scroll-container]'),
+      //     smooth: true
+      // });
+      var rellax = new Rellax('.rellax');
+
+
+      var vids = $("video"); 
+      $.each(vids, function(){
+            this.controls = false; 
+      }); 
+      //Loop though all Video tags and set Controls as false
+
+      // $("video").click(function() {
+      //   //console.log(this); 
+      //   if (this.paused) {
+      //     this.play();
+      //   } else {
+      //     this.pause();
+      //   }
+      // });
     });
   </script>
 
@@ -39,7 +71,7 @@
   <nav class="absolute top-0 left-0 w-full z-30">
     <div class="justify-between h-16 p-4 lg:p-10">
       <div class="">
-        <img class="block float-left h-12 w-auto" src="images/Nature_s Vault - Logo.png" alt="Workflow">
+        <img class="block float-left h-12 w-auto" src="./images/Nature_s Vault - Logo.png" alt="Workflow">
         <div class="
           float-right
           hidden md:block
@@ -108,13 +140,34 @@
     </div>
   </nav>
 
-  <div class="sm:overflow-hidden
-    bg-hero
+
+<!--
+bg-hero
     bg-cover
+
+-->
+  <section 
+    class="
+    block
+    relative
     overflow-hidden
   ">
+    <!-- Start EasyHtml5Video.com BODY section -->
+    <style type="text/css">.easyhtml5video .eh5v_script{display:none}</style>
+    <video 
+      class="object-cover w-full h-full absolute top-0 left-0"
+    controls="controls" autoplay loop muted playsinline poster="html5video/shutterstock_1038203501.jpg" 
+    style="width:100%" title="NV - Hero Video">
+      <source src="html5video/shutterstock_1038203501.m4v" type="video/mp4" />
+      <source src="html5video/shutterstock_1038203501.webm" type="video/webm" />
+      <source src="html5video/shutterstock_1038203501.ogv" type="video/ogg" />
+      <source src="html5video/shutterstock_1038203501.mp4" />
+    </video>
+    <script src="html5video/html5ext.js" type="text/javascript"></script>
+    <!-- End EasyHtml5Video.com BODY section -->
+
     <!-- <div class="absolute inset-0">
-      <img class="h-1/2 w-full object-cover" src="images/Nature_s Vault - Image Forest(1).jpg" alt="People working on laptops">
+      <img class="h-1/2 w-full object-cover" src="./images/Nature_s Vault - Image Forest(1).jpg" alt="People working on laptops">
     </div> -->
     <div class="block 
       relative first-letter:
@@ -128,17 +181,19 @@
       <div class="hidden md:inline">Nature's Vault</div>
       <div class="font-bold text-4xl">A NEW WAY TO INVEST IN OUR PLANET'S FUTURE</div>
       <div class="w-full mt-4 py-2 sm:mt-0 sm:ml-3 inline-block">
-        <button type="submit" class="block mx-auto rounded-full border border-transparent px-5 py-2 bg-gradient-to-r from-natures-vault-green to-natures-vault-blue text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-white focus:ring-offset-2 sm:px-10">
-          <div>Join the Community</div>
-          <div>Learn More</div>
-        </button>
+        <ul class="flex justify-center md:justify-end text-base md:flex-row flex-col mt-4 lg:mt-10 -mx-4">
+          <li class="px-4 my-5 md:my-0"><a href="#" class="font-bold underline-link">Join the Whitelist</a></li>
+          <li class="px-4 my-5 md:my-0"><a href="#" class="font-bold underline-link">Read Whitepaper</a></li>
+          <li class="px-4 my-5 md:my-0"><a href="#" class="font-bold underline-link">Join the community</a></li>
+        </ul>
       </div>
     </div>
-  </div>
+  </section>
 
 
   <!-- Innovative and Impactful Natural Capital Solutions -->
-  <div class="lg:flex lg:flex-row md:p-20 md:gap-20">
+  <section 
+    class="rellax lg:flex lg:flex-row md:p-20 md:gap-20">
     <div class="p-8 md:p-0 lg:basis-1/2">
       <p>We are Nature's Vault</p>
       <p class="font-bold text-2xl mt-2">Innovative and Impactful Natural Capital Solutions</p>
@@ -160,41 +215,49 @@
       </div>
     </div>
     <div class="lg:basis-1/2">
-      <div class="hidden lg:block md:relative w-[430px] h-[430px]">
+      <div class="rellax 
+      hidden lg:block md:relative w-[430px] h-[430px]"
+      data-rellax-speed="-2"
+      >
         <div class="block overflow-hidden w-[400px] h-[400px] absolute -top-[150px] mx-[18px]">
-          <img class="ml-[-183px] max-w-none	 -rotate-45 object-cover w-[700px]" src="images/Nature_s Vault - Image Mining.jpg" />
+          <img class="ml-[-183px] max-w-none	 -rotate-45 object-cover w-[700px]" src="./images/Nature_s Vault - Image Mining.jpg" />
         </div>
         <div class="w-[100px] h-[100px] absolute z-10 block border-natures-vault-green bottom-[163px] border-b-4 border-l-4 border-solid"></div>
         <div class="w-[100px] h-[100px] absolute z-10 block border-natures-vault-green -top-[170px] -right-[7px] border-t-4 border-r-4 border-solid"></div>
       </div>
     </div>
-  </div>
+  </section>
   
 
   <!-- Legacy Token -->
-  <div class="md:flex md:flex-row md:p-20 md:gap-20" style="background-image: url('images/Nature_s Vault - Image Forest.jpg')">
+  <div 
+  class="mt-20 md:flex md:flex-row md:p-20 md:gap-20" style="background-image: url('./images/Nature_s Vault - Image Forest.jpg')">
     <div class="p-8 md:basis-3/4 text-white">
       <p>Introducing</p>
       <p class="font-bold text-2xl mt-2">Legacy Token</p>
       <p class="mt-3">
         Legacy Token offers holders a unique opportunity to make a direct impact through the preservation of NaturesGoldTM and the avoidance of real world gold mining. 
       </p>
-      <div class="flex mt-10 text-sm">
-        <a class="" href="#">Discover Legacy Token</a>
-        <a class="ml-5" href="#">Join the Whitelist</a>
-      </div>
+      <ul class="flex justify-center md:justify-between text-base md:flex-row flex-col mt-4 lg:mt-10 -mx-4">
+        <li class="px-4 my-5 md:my-0"><a href="#" class="font-bold underline-link">Discover Legacy Token</a></li>
+        <li class="px-4 my-5 md:my-0"><a href="#" class="font-bold underline-link">Join the Whitelist</a></li>
+      </ul>
     </div>
     <div class="md:basis-1/4">
       <div class="hidden md:block md:relative w-[300px] h-[300px]">
         <div class="block overflow-hidden w-[300px] h-[300px] absolute">
-          <img class="max-w-none rotate-12 object-cover w-full" src="images/Nature_s Vault - Image Coin.png" />
+          <img 
+            data-aos="fade-left"
+            data-aos-duration="1000"
+          class="max-w-none rotate-12 object-cover w-full" src="./images/Nature_s Vault - Image Coin.png" />
         </div>
       </div>
     </div>
   </div>
 
   <!-- the people -->
-  <div class="text-center">
+  <section 
+    class="text-center">
     <div class="my-20 mx-10 md:mx-40">
       <p>The People</p>
       <p class="font-bold text-2xl mt-2">Building Nature's Vault</p>
@@ -210,24 +273,23 @@
         sm:grid-cols-3 sm:gap-x-6 
         md:grid-cols-4 md:gap-x-6 
         lg:grid-cols-5 lg:max-w-5xl lg:gap-x-8 lg:gap-y-12 
-        xl:grid-cols-6
         mb-10  
         p-5
       ">
 
       <li>
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/philrickard.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/philrickard.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chief Executive Officer</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chief Executive Officer</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Phil Rickard</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/philrickard/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/philrickard/">in</a>
               </div>
             </div>
           </div>
@@ -236,17 +298,17 @@
 
       <li>
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/russell-hopkins-natures-vault.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/russell-hopkins-natures-vault.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chief Financial Officer</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chief Financial Officer</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Russell Hopkins</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/russell-hopkins-a8959a39/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/russell-hopkins-a8959a39/">in</a>
               </div>
             </div>
           </div>
@@ -255,17 +317,17 @@
 
       <li>
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Dan Rickard.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Dan Rickard.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chief Commercial Officer</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chief Commercial Officer</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Dan Rickard</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/dan-rickard-3397b9b9/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/dan-rickard-3397b9b9/">in</a>
               </div>
             </div>
           </div>
@@ -274,17 +336,17 @@
 
       <li>
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/zach nice.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/zach nice.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chief Marketing Officer</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chief Marketing Officer</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Zachary Nice</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/zachnice/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/zachnice/">in</a>
               </div>
             </div>
           </div>
@@ -293,17 +355,17 @@
 
       <li>
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Jason Wagner.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Jason Wagner.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chief Growth Officer</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chief Growth Officer</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Jason Wagner</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/jasrwagner/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/jasrwagner/">in</a>
               </div>
             </div>
           </div>
@@ -312,18 +374,18 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Nenad-Bago.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Nenad-Bago.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Sustainability Product 
+              <h3 class="job-title mt-2">Sustainability Product 
                 Development Manager</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Nenad Bago</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/nenadbago/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/nenadbago/">in</a>
               </div>
             </div>
           </div>
@@ -332,17 +394,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/MARK BRADY.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/MARK BRADY.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Head of Business Development</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Head of Business Development</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Mark Brady</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/mark-brady-1bbb866/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/mark-brady-1bbb866/">in</a>
               </div>
             </div>
           </div>
@@ -351,17 +413,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/willie-chang.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/willie-chang.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Fintech Advisor</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Fintech Advisor</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Willie Chang</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/willie-chang/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/willie-chang/">in</a>
               </div>
             </div>
           </div>
@@ -370,17 +432,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/STANLEY CHENG.JPG" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/STANLEY CHENG.png" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Blockchain Advisor</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Blockchain Advisor</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Stanley Cheng</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/stanley-cheng-766b895/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/stanley-cheng-766b895/">in</a>
               </div>
             </div>
           </div>
@@ -389,17 +451,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/no-profile-pic-icon-11.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/no-profile-pic-icon-11.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Institutional Sales Advisor</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Institutional Sales Advisor</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Edward Cheung</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/edward-cheung-479b0a130/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/edward-cheung-479b0a130/">in</a>
               </div>
             </div>
           </div>
@@ -408,17 +470,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Todd Davaatseren.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Todd Davaatseren.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Growth Manager</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Growth Manager</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Todd Davaatseren</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/todd-davaatseren/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/todd-davaatseren/">in</a>
               </div>
             </div>
           </div>
@@ -427,18 +489,18 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/scott_deathearage.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/scott_deathearage.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Senior Advisor
+              <h3 class="job-title mt-2">Senior Advisor
                 Carbon and Biodiversity</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Scott Deatherage</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/scottdeatherage/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/scottdeatherage/">in</a>
               </div>
             </div>
           </div>
@@ -447,18 +509,18 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/no-profile-pic-icon-11.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/no-profile-pic-icon-11.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Senior Advisor
+              <h3 class="job-title mt-2">Senior Advisor
                 IP Strategy and Patents</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Fabian De La Fuente</p>
-                <a class="inline text-linkedin-blue" href="https://ca.linkedin.com/in/fabian-de-la-fuente">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://ca.linkedin.com/in/fabian-de-la-fuente">in</a>
               </div>
             </div>
           </div>
@@ -467,17 +529,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/NABILLA DHEVIA.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/NABILLA DHEVIA.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Relationship Manager</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Relationship Manager</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Nabilla Dhevia</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/nabilla-dhevia-b58bb7153/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/nabilla-dhevia-b58bb7153/">in</a>
               </div>
             </div>
           </div>
@@ -486,17 +548,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Ayu Harakita.JPG" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Ayu Harakita.JPG" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Sales Manager</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Sales Manager</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Ayu Harakita</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/ayu-harakita-871712b9/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/ayu-harakita-871712b9/">in</a>
               </div>
             </div>
           </div>
@@ -505,17 +567,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/michael-harrison.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/michael-harrison.png" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chairman</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chairman</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Michael Harrison</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/michael-harrison-ab679899/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/michael-harrison-ab679899/">in</a>
               </div>
             </div>
           </div>
@@ -524,17 +586,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/RAY HENNESSEY.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/RAY HENNESSEY.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Chief Technology Officer</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Chief Technology Officer</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Ray Hennessy</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/rayhennessey/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/rayhennessey/">in</a>
               </div>
             </div>
           </div>
@@ -543,17 +605,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Theresa Hopkins Unedit.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Theresa Hopkins Unedit.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Head of NGO Outreach</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Head of NGO Outreach</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Theresa Hopkins</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/theresa-hopkins-205748221/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/theresa-hopkins-205748221/">in</a>
               </div>
             </div>
           </div>
@@ -562,17 +624,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Nikolas-Matysek.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Nikolas-Matysek.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Head of Mine Acquisitions</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Head of Mine Acquisitions</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Nikolas Matysek</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/nmatysek/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/nmatysek/">in</a>
               </div>
             </div>
           </div>
@@ -581,18 +643,18 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/paul_matysek.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/paul_matysek.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Senior Advisor
+              <h3 class="job-title mt-2">Senior Advisor
                 Acquisitions</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Paul Matysek</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/paul-matysek-74621071/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/paul-matysek-74621071/">in</a>
               </div>
             </div>
           </div>
@@ -601,17 +663,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Irawan Mulyadi.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Irawan Mulyadi.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Director</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Director</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Irawan Mulyadi</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/imulyadi/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/imulyadi/">in</a>
               </div>
             </div>
           </div>
@@ -620,18 +682,18 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Diandra Krista Unedit.jpg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Diandra Krista Unedit.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Content and Digital
+              <h3 class="job-title mt-2">Content and Digital
                 Marketing Specialist</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Diandra Sasongko</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/diandraks/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/diandraks/">in</a>
               </div>
             </div>
           </div>
@@ -640,18 +702,18 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/Phillip Skevington.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/Phillip Skevington.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Senior Advisor
+              <h3 class="job-title mt-2">Senior Advisor
                 Risk</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Philip Skevington</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/philip-skevington-2ab51816/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/philip-skevington-2ab51816/">in</a>
               </div>
             </div>
           </div>
@@ -660,14 +722,14 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/no-profile-pic-icon-11.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/no-profile-pic-icon-11.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Assistant to CEO</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Assistant to CEO</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Anggun Suguri</p>
               </div>
@@ -678,17 +740,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/WAYNE TANG.jpeg" alt="">
+          src="./images/NATURESVAULT TEAM HEADSHOT/WAYNE TANG.jpeg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Head of Community</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Head of Community</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Wayne Tang</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/waynetangcrypto/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/waynetangcrypto/">in</a>
               </div>
             </div>
           </div>
@@ -697,17 +759,17 @@
 
       <li class="meet-the-team hidden">
         <div class="space-y-1">
-          <img class="
+          <img class="object-cover
           border-natures-vault-green border-4 border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue mx-auto 
           h-[200px] w-[200px] rounded-full lg:w-24 lg:h-24" 
-          src="images/NATURESVAULT TEAM HEADSHOT/John Wiebe.jpg" alt="">
+          src="images/NATURESVAULT TEAM HEADSHOT/John-Wiebe.jpg" alt="">
           <div class="space-y-2">
             <div class="text-xs font-medium lg:text-sm">
-              <h3>Director</h3>
-              <div class="block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
+              <h3 class="job-title mt-2">Director</h3>
+              <div class="my-[5px] block border-natures-vault-green border-[1px] border-solid bg-gradient-to-r from-natures-vault-green to-natures-vault-blue w-1/2 mx-auto"></div>
               <div class="overflow-auto">
                 <p class="text-black inline">Dr. John Wiebe</p>
-                <a class="inline text-linkedin-blue" href="https://www.linkedin.com/in/john-wiebe-a564856/">IN</a>
+                <a class="inline text-linkedin-blue underline" href="https://www.linkedin.com/in/john-wiebe-a564856/">in</a>
               </div>
             </div>
           </div>
@@ -720,89 +782,137 @@
       <button id="open-meet-the-team">+ Meet the Team</button>
       <button id="close-meet-the-team" class="hidden">- Meet the Team</button>
     </div>
-  </div>
-
-  <!-- Our Values -->
-  <div class="lg:flex lg:flex-row md:p-20 md:gap-20 bg-grey-section">
-    <div class="lg:basis-1/2">
-      <div class="hidden lg:block md:relative w-[430px] h-[430px]">
-        <div class="block overflow-hidden w-[400px] h-[400px] absolute -top-[110px] mx-[18px]">
-          <img class="ml-[-183px] max-w-none	 -rotate-45 object-cover w-[700px]" src="images/Nature_s Vault - Image Forest(1).jpg" />
-        </div>
-        <div class="w-[100px] h-[100px] absolute z-10 block border-natures-vault-green bottom-[123px] border-b-4 border-l-4 border-solid"></div>
-        <div class="w-[100px] h-[100px] absolute z-10 block border-natures-vault-green -top-[127px] -right-[7px] border-t-4 border-r-4 border-solid"></div>
-      </div>
-    </div>
-    <div class="p-3 md:p-0 lg:basis-1/2">
-      <p>What We Care About</p>
-      <p class="font-bold text-2xl mt-2">Our Values</p>
-      <p class="mt-3">
-        We leverage blockchain technology to create new solutions for the world's most pressing environmental and social challenges.
-      </p>
-      <p class="mt-3">
-        Our team aims to broaden accessibility and accelerate funding of impactful initiatives that tackle the challenges facing our planet. 
-      </p>
-
-    </div>
-  </div>
+  </section>
 
 
-  <!-- Impact Presevation Community Transparency -->
-  <div class="bg-grey-section">
-    <div class="mx-32 text-white
-      grid 
-      grid-cols-2
-      md:grid-cols-4
 
+  <section 
+  class="mt-20 md:bg-mountains md:bg-cover bg-white">
+
+              <!-- Our Values -->
+              <div class="rellax 
+              md:p-16 
+              lg:gap-20 lg:flex lg:flex-row 
+              "
+              data-rellax-speed="3"
+              data-rellax-percentage="0.5"
+              >
+                <div class="lg:basis-1/2">
+                  <div 
+                  data-aos="fade-right"
+                  data-aos-duration="1000"
+                  class="hidden lg:block md:relative w-[430px] h-[430px]">
+                    <div class="block overflow-hidden w-[400px] h-[400px] absolute -top-[90px] mx-[18px]">
+                      <img class="ml-[-183px] max-w-none	 -rotate-45 object-cover w-[700px]" src="./images/Nature_s Vault - Image Forest(1).jpg" />
+                    </div>
+                    <div class="w-[100px] h-[100px] absolute z-10 block border-natures-vault-green bottom-[103px] border-b-4 border-l-4 border-solid"></div>
+                    <div class="w-[100px] h-[100px] absolute z-10 block border-natures-vault-green -top-[107px] -right-[7px] border-t-4 border-r-4 border-solid"></div>
+                  </div>
+                </div>
+                <div class="p-3 md:p-0 lg:basis-1/2">
+                  <p class="text-sm">What We Care About</p>
+                  <p class="font-bold text-2xl mt-2">Our Values</p>
+                  <p class="mt-3 text-sm">
+                    We leverage blockchain technology to create new solutions for the world's most pressing environmental and social challenges.
+                  </p>
+                  <p class="mt-3 text-sm">
+                    Our team aims to broaden accessibility and accelerate funding of impactful initiatives that tackle the challenges facing our planet. 
+                  </p>
+
+                </div>
+              </div>
+
+
+                      <!-- Impact Presevation Community Transparency -->
+                      <div class="rellax"
+                        data-rellax-speed="2"
+                        data-rellax-percentage="0.5"
+                      >
+                        <div class="mx-0 md:mx-32 text-white
+                          grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4
+                        ">
+                          <div class="bg-impact bg-cover p-5 bg-blend-darken bg-[#CCCCCC]">
+                            <div class="mt-20 text-2xl font-extrabold 
+                            after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
+                            ">Impact</div>
+                            <div class="my-5 mb-40 text-sm">Facilitating direct participation in meaningful and impactful projects.</div>
+                          </div>
+                          <div class="bg-preservation bg-cover p-5 bg-blend-darken bg-[#CCCCCC]">
+                            <div class="mt-20 text-2xl font-extrabold 
+                            after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
+                            ">Preservation</div>
+                            <div class="my-5 mb-40 text-sm">Safeguarding vulnerable natural capital and ecosystems.</div>
+                          </div>
+                          <div class="bg-community bg-cover p-5 bg-blend-darken bg-[#CCCCCC]">
+                            <div class="mt-20 text-2xl font-extrabold 
+                            after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
+                            ">Community</div>
+                            <div class="my-5 mb-40 text-sm">Leveraging blockchain 
+                              technology to create new 
+                              solutions for the world’s 
+                              most pressing environmental 
+                              and social challenges.</div>
+                          </div>
+                          <div class="bg-transparency bg-cover p-5 bg-blend-darken bg-[#CCCCCC]">
+                            <div class="mt-20 text-2xl font-extrabold 
+                            after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
+                            ">Transparency</div>
+                            <div class="my-5 mb-40 text-sm">Leveraging blockchain 
+                              technology to create new 
+                              solutions for the world’s 
+                              most pressing environmental 
+                              and social challenges.</div>
+                          </div>
+                        </div>
+
+                      </div>
+
+    <!-- Invest in the Future -->
+    <div class="
+      mt-20 sm:mt-36 
+      md:pt-20
+      bg-mountains-small md:bg-none 
+      bg-cover md:bg-auto
     ">
-      <div class="bg-impact bg-cover p-5">
-        <div class="mt-20 text-2xl font-extrabold 
-        after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
-        ">Impact</div>
-        <div class="my-5 mb-40 text-sm">Facilitating direct participation in meaningful and impactful projects.</div>
-      </div>
-      <div class="bg-preservation bg-cover p-5">
-        <div class="mt-20 text-2xl font-extrabold 
-        after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
-        ">Preservation</div>
-        <div class="my-5 mb-40 text-sm">Safeguarding vulnerable natural capital and ecosystems.</div>
-      </div>
-      <div class="bg-community bg-cover p-5">
-        <div class="mt-20 text-2xl font-extrabold 
-        after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
-        ">Community</div>
-        <div class="my-5 mb-40 text-sm">Leveraging blockchain 
-          technology to create new 
-          solutions for the world’s 
-          most pressing environmental 
-          and social challenges.</div>
-      </div>
-      <div class="bg-transparency bg-cover p-5">
-        <div class="mt-20 text-2xl font-extrabold 
-        after:block after:box-decoration-slice after:bg-gradient-to-r after:from-natures-vault-green after:to-natures-vault-blue after:h-[2px]
-        ">Transparency</div>
-        <div class="my-5 mb-40 text-sm">Leveraging blockchain 
-          technology to create new 
-          solutions for the world’s 
-          most pressing environmental 
-          and social challenges.</div>
-      </div>
-    </div>
-
-  </div>
+      <div class="
+        bg-black bg-opacity-40
+      "
+      data-aos="fade-down"
+      data-aos-duration="1000"
+      >
+        <div class="
+          px-8 md:px-36
+          py-20 md:py-36
+          text-white
+        ">
+          <p>Be Impactful</p>
+          <p class="font-bold text-2xl mt-2">Invest in the Future</p>
+          <p class="mt-3">
+            The Legacy Token is more than just a token, it’s a commitment to help protect the planet we all call home.  The purchase of every Legacy Token advances a global movement and changes the way you can support the planet.
+          </p>
+          <div class="flex mt-10 text-sm">
+            <a class="" href="#">Join the Community</a>
+            <a class="ml-5" href="#">Meet the Legacy Token</a>
+            <a class="ml-5" href="#">Join the Whitelist</a>
+          </div>
+        </div>
+      </div>       
+    </div>       
 
 
+  </section>
 
 
 
   <!-- https://tailwindui.com/components/marketing/sections/blog-sections -->
   <!-- Our Community START -->
-  <div class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
+  <section 
+  class="relative bg-gray-50 pt-16 pb-20 px-4 sm:px-6 lg:pt-24 lg:pb-28 lg:px-8">
     <div class="absolute inset-0">
       <!--
       <div class="bg-white h-1/3 sm:h-2/3"></div>
       -->
-      <img class="opacity-25 h-56 w-full object-cover hidden lg:block sm:h-200 md:h-96 lg:w-full lg:h-full" src="images/Nature_s Vault - Background 2-edit.png" alt="">
+      <img class="opacity-25 h-56 w-full object-cover hidden lg:block sm:h-200 md:h-96 lg:w-full lg:h-full" src="./images/Nature_s Vault - Background 2-edit.png" alt="">
     </div>
     <div class="relative max-w-7xl mx-auto lg:px-14">
       <div class="text-center lg:text-left">
@@ -815,13 +925,13 @@
 
         <div class="flex flex-col overflow-hidden">
           <div class="flex-shrink-0">
-            <img class="h-80 w-full object-cover" src="images/NV - Enviromental Finance Award.png" alt="">
+            <img class="h-80 w-full object-cover" src="./images/NV - Enviromental Finance Award.png" alt="">
           </div>
           <div class="flex-1 bg-white/[0] p-6 flex flex-col justify-between">
             <div class="flex-1">
               <a href="#" class="block mt-2">
-                <p class="text-1xl font-bold text-gray-900">Verra Win Environmental Finance Award</p>
-                <p class="mt-3 text-sm">Verra is honored by today's news that it has received two Environmental Finance Awards for 2021.</p>
+                <p class="text-1xl font-bold text-gray-900">Nature's Vault Launches Novel Blockchain-Powered Platform</p>
+                <p class="mt-3 text-sm">“Building a first-of-its kind platform that allows anyone to fund impact investing projects around the world is a legacy everyone at Nature’s Vault is proud to be part of,”</p>
               </a>
             </div>
           </div>
@@ -829,13 +939,14 @@
 
         <div class="flex flex-col overflow-hidden">
           <div class="flex-shrink-0">
-            <img class="h-80 w-full object-cover" src="images/NV - Image Mining Tech.jpeg" alt="">
+            <img class="h-80 w-full object-cover" src="./images/NV - Image Mining Tech.jpeg" alt="">
           </div>
           <div class="flex-1 bg-white/[0] p-6 flex flex-col justify-between">
             <div class="flex-1">
               <a href="#" class="block mt-2">
-                <p class="text-1xl font-bold text-gray-900">Mining Tech Could Capture Billions</p>
-                <p class="mt-3 text-sm">UBC professor says that mining technology could capture “billions of tonnes of CO2 per year.”</p>
+                <p class="text-1xl font-bold text-gray-900">ESG Roundup - When Blockchain
+                  Meets a Gold Mine</p>
+                <p class="mt-3 text-sm">Gold: you are indestructible, said ‘80s band Spandau Ballet, but mining it isn’t so good for the environment.</p>
               </a>
             </div>
           </div>
@@ -843,13 +954,13 @@
 
         <div class="flex flex-col overflow-hidden">
           <div class="flex-shrink-0">
-            <img class="h-80 w-full object-cover" src="images/Nature_s Vault - Image Impact.jpeg" alt="">
+            <img class="h-80 w-full object-cover" src="./images/Nature_s Vault - Image Impact.jpeg" alt="">
           </div>
           <div class="flex-1 bg-white/[0] p-6 flex flex-col justify-between">
             <div class="flex-1">
               <a href="#" class="block mt-2">
-                <p class="text-1xl font-bold">Miners Falling Short of Carbon Cuts Needed for UN Goals</p>
-                <p class="mt-3 text-sm"> The mining industry is falling short on cutting greenhouse-gas emissions enough to limit global warming, even after stepping up efforts to help combat climate change.</p>
+                <p class="text-1xl font-bold">How Heavy is a Gold Blockchain?</p>
+                <p class="mt-3 text-sm"> The environmental impact of gold mining has led most green- and values-based investors to shun the metal. It can be a dirty business.</p>
               </a>
             </div>
           </div>
@@ -857,15 +968,14 @@
 
         <div class="flex flex-col overflow-hidden">
           <div class="flex-shrink-0">
-            <img class="h-80 w-full object-cover" src="images/Nature_s Vault - Image Forest Sunshine.jpg" alt="">
+            <img class="h-80 w-full object-cover" src="./images/Nature_s Vault - Image Forest Sunshine.jpg" alt="">
           </div>
           <div class="flex-1 bg-white/[0] p-6 flex flex-col justify-between">
             <div class="flex-1">
               <a href="#" class="block mt-2">
-                <p class="text-1xl font-bold">Singapore is positioned to become SEA's CO2 Trading Hub</p>
-                <p class="mt-3 text-sm">Lorem ipsum dolor sit amet, consectetur
-                  adipiscing elit. Nullam ut massa id libero
-                  accumsan placerat a ac mauris.</p>
+                <p class="text-1xl font-bold">Legacy Tokens, ESG Investing and
+                  Solving Greenwashing</p>
+                <p class="mt-3 text-sm">Phil is a global entrepreneur who has founded and developed natural resources, renewable energy, FinTech, and AI- driven enterprises.</p>
               </a>
             </div>
           </div>
@@ -873,43 +983,50 @@
 
       </div>
     </div>
-  </div>
+  </section>
   <!-- Our Community END -->
 
 
   <!-- https://tailwindui.com/components/marketing/sections/newsletter-sections -->
   <!-- newsletter -->
-  <div class="bg-white">
+  <section
+  class="bg-white">
     <div class="mx-auto max-w-md lg:px-60 sm:max-w-3xl lg:max-w-7xl">
-      <div class="relative rounded-2xl px-6 py-10 bg-cover overflow-hidden shadow-xl sm:py-20" style="background-image: url('images/Nature_s Vault - Image Signup Background.jpg')">
+      <div class="relative rounded-2xl px-3 py-10 bg-cover overflow-hidden shadow-xl sm:py-16" style="background-image: url('./images/Nature_s Vault - Image Signup Background.jpg')">
         <div class="relative mx-10">
           <div class="sm:text-center text-white flex">
             <div class="w-6 border-natures-vault-green border-y-4 border-l-4"></div>
             <div class="grow py-4 align-middle inline">
               <p class="mx-auto max-w-2xl text-lg">Sign Up For Our Newsletter</p>
-              <h2 class="text-3xl font-extrabold tracking-tight sm:text-4xl">Help Us Change the World</h2>
+              <h2 class="text-3xl font-bold tracking-tight sm:text-3xl">Help Us Change the World</h2>
             </div>
             <div class="w-6 border-natures-vault-green border-y-4 border-r-4"></div>
           </div>
-          <form action="#" class="mt-12">
+          <form action="#" class="mt-10">
             <div class="w-full my-4">
-              <label for="cta-email" class="sr-only">Your Name</label>
-              <input id="cta-email" type="email" class="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600" placeholder="Your Name">
+              <label for="cta-name" class="sr-only">Your Name</label>
+              <input id="cta-name" type="text" class="
+                bg-transparent block w-full border-2 px-5 py-3 text-base text-white placeholder-white shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white
+                " placeholder="Your Name">
             </div>
             <div class=" my-4">
               <label for="cta-email" class="sr-only">Your Email</label>
-              <input id="cta-email" type="email" class="block w-full border border-transparent rounded-md px-5 py-3 text-base text-gray-900 placeholder-gray-500 shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white focus:ring-offset-2 focus:ring-offset-indigo-600" placeholder="Your Email">
+              <input id="cta-email" type="email" class="
+              bg-transparent block w-full border-2 px-5 py-3 text-base text-white placeholder-white shadow-sm focus:outline-none focus:border-transparent focus:ring-2 focus:ring-white
+              " placeholder="Your Email">
             </div>
-            <div class="w-full mt-4 py-2 sm:mt-0 sm:ml-3">
+            <div class="w-full mt-4 pt-2 sm:mt-0 sm:ml-3">
               <button type="submit" class="block mx-auto rounded-full border border-transparent px-5 py-2 bg-gradient-to-r from-natures-vault-green to-natures-vault-blue text-base font-medium text-white shadow hover:bg-indigo-400 focus:outline-none focus:ring-white focus:ring-offset-2 sm:px-10">Join</button>
             </div>
           </form>
         </div>
       </div>
     </div>
-  </div>
+  </section>
 
+  <section>
 
+  </section>
 
 </body>
 </html>
