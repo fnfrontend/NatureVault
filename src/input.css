@@ -133,3 +133,16 @@
         background-image:url(../src/images/need-for-mine-bg-2.png);
     }
 }
+
+
+.social-link-hasdd .social-link-submenu {
+    @apply absolute bottom-[100%] left-[50%] hidden rounded-lg shadow-xl border border-gray-400 bg-white max-h-[300px] overflow-y-auto;
+    transform:translateX(-50%);
+}
+
+.social-link-hasdd .social-link-submenu a {
+    @apply px-4 py-2 block text-center text-gray-900 hover:text-natures-vault-green text-xs whitespace-nowrap;
+}
+.social-link-hasdd:hover .social-link-submenu{
+    @apply block;
+}
