@@ -21,10 +21,10 @@
 
 /* Clouds */
 .clouds .cloud1{
-    @apply absolute bottom-3 md:bottom-0 opacity-80 w-[40vw] md:w-[35vw]; animation: cloudmove 130s infinite; animation-timing-function: linear;
+    @apply absolute bottom-3 md:bottom-0 opacity-80 w-[60vw] md:w-[35vw]; animation: cloudmove 130s infinite; animation-timing-function: linear;
 }
 .clouds .cloud2{
-    @apply absolute -bottom-4 md:-bottom-8 opacity-80 w-[30vw] md:w-[25vw]; animation: cloudmove1 118s infinite; animation-timing-function: linear;
+    @apply absolute -bottom-2 md:-bottom-8 opacity-80 w-[50vw] md:w-[25vw]; animation: cloudmove 95s infinite; animation-timing-function: linear;
 }
 
 /* Cloud Animation */
@@ -89,7 +89,7 @@
     content:'';   
 }
 
-.faq-list .faq-item.active .faq-head:before {
+.faq-list .faq-item:not(.active) .faq-head:before {
     @apply h-5 w-1 block bg-black absolute right-2 top-[50%];
     transform:translateY(-50%);
     content:'';   
