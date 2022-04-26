@@ -596,6 +596,11 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: -1rem;
 }
 
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
 .my-3 {
   margin-top: 0.75rem;
   margin-bottom: 0.75rem;
@@ -636,11 +641,6 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-right: 8rem;
 }
 
-.my-5 {
-  margin-top: 1.25rem;
-  margin-bottom: 1.25rem;
-}
-
 .-mr-2 {
   margin-right: -0.5rem;
 }
@@ -653,24 +653,12 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 1rem;
 }
 
-.mt-8 {
-  margin-top: 2rem;
-}
-
 .mt-7 {
   margin-top: 1.75rem;
 }
 
-.mt-10 {
-  margin-top: 2.5rem;
-}
-
-.-mt-\[15vh\] {
-  margin-top: -15vh;
-}
-
-.-mt-20 {
-  margin-top: -5rem;
+.mt-24 {
+  margin-top: 6rem;
 }
 
 .mb-24 {
@@ -697,6 +685,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   margin-top: 4rem;
 }
 
+.mt-8 {
+  margin-top: 2rem;
+}
+
 .mt-12 {
   margin-top: 3rem;
 }
@@ -719,6 +711,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .ml-\[-183px\] {
   margin-left: -183px;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .ml-5 {
@@ -1536,7 +1532,7 @@ Ensure the default browser behavior of the `hidden` attribute.
 .clouds .cloud1 {
   position: absolute;
   bottom: 0.75rem;
-  width: 40vw;
+  width: 60vw;
   opacity: 0.8;
 }
 
@@ -1556,8 +1552,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 
 .clouds .cloud2 {
   position: absolute;
-  bottom: -1rem;
-  width: 30vw;
+  bottom: -0.5rem;
+  width: 50vw;
   opacity: 0.8;
 }
 
@@ -1569,8 +1565,8 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 .clouds .cloud2{
-  -webkit-animation: cloudmove1 118s infinite;
-          animation: cloudmove1 118s infinite;
+  -webkit-animation: cloudmove 95s infinite;
+          animation: cloudmove 95s infinite;
   -webkit-animation-timing-function: linear;
           animation-timing-function: linear;
 }
@@ -1753,7 +1749,7 @@ Ensure the default browser behavior of the `hidden` attribute.
   content:'';
 }
 
-.faq-list .faq-item.active .faq-head:before {
+.faq-list .faq-item:not(.active) .faq-head:before {
   position: absolute;
   right: 0.5rem;
   top: 50%;
@@ -1961,6 +1957,10 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 1rem;
   }
 
+  .sm\:block {
+    display: block;
+  }
+
   .sm\:h-2\/3 {
     height: 66.666667%;
   }
@@ -2034,6 +2034,11 @@ Ensure the default browser behavior of the `hidden` attribute.
     position: relative;
   }
 
+  .md\:my-0 {
+    margin-top: 0px;
+    margin-bottom: 0px;
+  }
+
   .md\:my-5 {
     margin-top: 1.25rem;
     margin-bottom: 1.25rem;
@@ -2049,17 +2054,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-right: 10rem;
   }
 
-  .md\:my-0 {
-    margin-top: 0px;
-    margin-bottom: 0px;
-  }
-
   .md\:mt-20 {
     margin-top: 5rem;
-  }
-
-  .md\:mt-0 {
-    margin-top: 0px;
   }
 
   .md\:mb-32 {
@@ -2148,6 +2144,10 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .md\:justify-end {
     justify-content: flex-end;
+  }
+
+  .md\:justify-between {
+    justify-content: space-between;
   }
 
   .md\:gap-20 {
@@ -2258,6 +2258,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 }
 
 @media (min-width: 1024px) {
+  .lg\:-bottom-\[5\.5vw\] {
+    bottom: -5.5vw;
+  }
+
+  .lg\:-bottom-\[5vw\] {
+    bottom: -5vw;
+  }
+
+  .lg\:-bottom-\[6vw\] {
+    bottom: -6vw;
+  }
+
   .lg\:my-7 {
     margin-top: 1.75rem;
     margin-bottom: 1.75rem;
@@ -2271,8 +2283,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     margin-top: 2.5rem;
   }
 
-  .lg\:mt-14 {
-    margin-top: 3.5rem;
+  .lg\:mt-80 {
+    margin-top: 20rem;
   }
 
   .lg\:mb-48 {
@@ -2297,6 +2309,18 @@ Ensure the default browser behavior of the `hidden` attribute.
 
   .lg\:mr-28 {
     margin-right: 7rem;
+  }
+
+  .lg\:mt-\[6vw\] {
+    margin-top: 6vw;
+  }
+
+  .lg\:mt-\[8vw\] {
+    margin-top: 8vw;
+  }
+
+  .lg\:mt-\[10vw\] {
+    margin-top: 10vw;
   }
 
   .lg\:block {
@@ -2404,8 +2428,8 @@ Ensure the default browser behavior of the `hidden` attribute.
     padding-top: 14rem;
   }
 
-  .lg\:pb-\[350px\] {
-    padding-bottom: 350px;
+  .lg\:pb-\[23vw\] {
+    padding-bottom: 23vw;
   }
 
   .lg\:pb-28 {
