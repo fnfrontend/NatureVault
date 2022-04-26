@@ -1,6 +1,4 @@
-AOS.init({
-    once: true,
-});
+AOS.init();
 
 
 $(document).on('click', '.faq-head', function(){
@@ -24,9 +22,9 @@ $(window).bind('scroll',function(e){
 });
 
 function parallaxScrollImpact(){
-   let scrolled = ($(window).scrollTop() - $('.impact-section').position().top) - $('.impact-section').height();
-   $('.impact-bg').css('top',(0-(scrolled*0.5))+'px');
-   $('.impact-text').css('top',(0-(scrolled*0.1))+'px');
+   let scrolled = ($(window).scrollTop() - $('.impact-section').position().top);
+   //$('.impact-bg').css('top',(0-(scrolled*0.5))+'px');
+   $('.impact-text').css('top',(0-(scrolled*0.3))+'px');
 }
 
 function parallaxScrollVision(){
